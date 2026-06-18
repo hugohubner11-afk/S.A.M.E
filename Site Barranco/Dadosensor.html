@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="E.E. Professor Jóse Vênancio">
+    <meta name="description" content="Página de dados do sistema">
+    <title>Medição de Dados-S.A.M.E.</title>
+    <link rel="icon" href="LogoSame.jpeg">
+    <link rel="stylesheet" href="SityleDDS.css">
+    <link href="http://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="logop">
+                <img src="LogoSame.jpeg" class="logo">
+            </div>
+            <div class="subtitulo">
+                <h1>S.A.<span style="color: saddlebrown;">M</span>.E.</h1>
+                <p>Sistema Automático de Monitoramento de encostas</p>
+            </div>
+            <nav class="AH">
+                    <ul>
+                         <li><a href="index.html">Início</a></li>
+                         <li><a href="Dadosensor.html">Medições Atuais</a></li>
+                        <li><a href="Galeria.html">Galeria</a></li>
+                    </ul>
+            </nav>
+            <button class="emergencia">
+                <img src="telefone.png" alt="telefone icone" class="telefone">
+                <a href="tel:193">Emergência <span class="phone"span style="font-weight: bold;top: -2px;position: relative;">193</span></a>
+            </button>
+        </div>
+    </header>
+   <div class="card">
+
+    <div class="info">
+        <span class="label">Última atualização</span>
+        <p id="data">Carregando...</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="item">
+            <span>🌡️ Temperatura</span>
+            <strong id="temperatura">-- °C</strong>
+        </div>
+
+        <div class="item">
+            <span>💧 Umidade</span>
+            <strong id="umidade">-- %</strong>
+        </div>
+
+        <div class="item">
+            <span>🌱 Umidade do Solo</span>
+            <strong id="solo">-- %</strong>
+        </div>
+
+    </div>
+
+</div>
+<script>
+async function carregarDados() {
+
+    try {
+
+        const resposta = await fetch(
+            "https://api.thingspeak.com/channels/3399409/feeds.json?results=1"
+        );
+
+        const dados = await resposta.json();
+
+        const ultimo = dados.feeds[0];
+
+        document.getElementById("data").textContent =
+            new Date(ultimo.created_at)
+            .toLocaleString("pt-BR", {
+            timeZone: "America/Sao_Paulo"
+            });
+        document.getElementById("temperatura")
+            .textContent =
+            `${ultimo.field1 ?? "--"} °C`;
+
+        document.getElementById("umidade")
+            .textContent =
+            `${ultimo.field2 ?? "--"} %`;
+
+        document.getElementById("solo")
+            .textContent =
+            `${ultimo.field3 ?? "--"} %`;
+
+    }
+
+    catch {
+
+        document.querySelector(".card")
+            .innerHTML =
+            "<p>Erro ao carregar dados.</p>";
+
+    }
+
+}
+
+carregarDados();
+
+setInterval(
+    carregarDados,
+    20000
+);
+</script>
+</body>
+</html>

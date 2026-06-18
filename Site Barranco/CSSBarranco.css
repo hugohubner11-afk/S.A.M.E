@@ -1,0 +1,405 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+@media (max-width:768px) {
+    .conteudo {
+        flex-direction: column;
+    }
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+
+
+.logo {
+width:40%;
+height: 40%;
+border-radius: 30px;
+}
+.logop {
+    background-color: rgb(255, 255, 255);
+    width: 14%;
+}
+
+.subtitulo p{
+    color: black;
+}
+
+.artigo a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+}
+
+.artigo{
+    width: 100%;
+    max-width: fit-content;
+    transition:0.4s;
+}
+
+.artigo:hover{
+transform: scale(1.03);
+}
+
+.AH a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: brown;
+    transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+nav {
+    background-color: #fff;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 calc(33.333% - 10px);
+    margin:auto
+}
+nav ul li a {
+    color: black;
+    transition: color 0.3s; transform: 0.3s;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav ul li a:hover {
+    color: brown;
+    text-decoration: none;
+    transition:  0.2s ease-in-out;
+    
+}
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 100px;
+}
+.top {
+ display: flex;
+ width: 100%;
+ background-color:#fff;
+ flex-wrap: wrap;
+ gap: 10px;
+ align-items: center;
+}
+
+.emergencia {
+    background-color: red;
+    width: 90px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-radius: 7%;
+    margin-right: 10px;
+}
+
+.emergencia a{
+    color: #fff;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline:2px solid rgb(181, 0, 0);
+}
+
+.telefone {
+    top: 3.5px;
+    position: relative;
+    width: 20px;
+}
+
+.conteudotop {
+    background:linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.3)),url("Foto\ de\ Barranco.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 200px;
+}
+.conteudotop h2{
+    color:saddlebrown;
+    text-align: left;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.conteudotop p{
+    color: #fff;
+    text-align: left;
+}
+.conteudo {
+    display: flex;
+    background-color: #fff;
+    gap: 10px;
+}
+.conteudo img{
+    display: block;
+    margin: auto;
+}
+
+.Prints{
+    border-radius: 7px;
+}
+.artigo {
+    margin-top: 50px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 7px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.artigo img{
+    width: 100%;
+}
+
+.artigo a{
+    position: relative;
+    color: red;
+    transition: color 0.3s; transform: 0.2s;
+    text-decoration: none;
+    font-size: 20px;
+    font-family:"Stack Sans Text", sans-serif;
+}
+
+.artigo p{
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    text-align: top;
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 30px;
+}
+p {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    color: black;
+}
+footer {
+    background-color:rgb(43, 43, 43);
+    margin-top: 10px;
+
+}
+.logoesc{
+    background-color: #fff;
+    width: 14%;
+}
+
+#logoescF{
+    text-decoration: none;
+    width: 14%;
+    margin: 10px 200px auto 30px;
+}
+
+#instaI{
+    color: #fff;
+    font-size: 24px;
+}
+
+#NavF{
+    background-color: rgb(43, 43, 43);
+    margin-right: 600px;
+}
+
+#NavF ul{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#aF{    
+    margin-top:50px;
+     position: relative;
+    top: -2px;
+    color: #fff;
+}
+.copyright {
+    color: #fff;
+    text-align: center;
+}
+
+#linha1{
+    width: 100%;
+    margin:auto;
+    height: 1px;
+    background-color: #fff;
+    border: none
+}
+
+#linhav{
+    width: 1px;
+    height: 100px;
+    background-color: #fff;
+    border: none;
+    margin: -10px 20px;
+}
+
+.FoterL{
+    display: inline-block;
+}
+
+.FoterL a:hover{
+    text-decoration: underline;
+}
+
+#Equipe h3{
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+#Equipe p{
+    color: #fff;
+    text-align: center;
+    font-size: 9px;
+}
+
+
+@media screen and (max-width:768px){
+
+    /* Cabeçalho */
+
+    .top{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    ul{
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logop{
+        width: 25%;
+    }
+
+    .logo{
+        width: 100%;
+        height: auto;
+    }
+
+    .conteudotop{
+        padding: 120px 60px;
+    }
+
+    .conteudo{
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .artigo{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .artigo p{
+        font-size: 18px;
+    }
+
+    .Prints{
+        width: 100%;
+        height: auto;
+    }
+
+
+    .logoesc{
+        width: 25%;
+    }
+
+    #logoescF{
+        width: 25%;
+        margin: 10px auto;
+    }
+
+    #NavF{
+        margin-right: 0;
+    }
+
+    #NavF ul{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #linhav{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:480px){
+
+    .logop{
+        width: 40%;
+    }
+
+    .logoesc{
+        width: 40%;
+    }
+
+    ul{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .conteudotop{
+        padding: 80px 30px;
+    }
+
+    .conteudotop h2{
+        font-size: 24px;
+    }
+
+    .conteudotop p{
+        font-size: 16px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+
+    .artigo p{
+        font-size: 16px;
+    }
+
+    .emergencia{
+        margin: auto;
+    }
+
+}
